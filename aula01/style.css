@@ -36,6 +36,8 @@ table {
 
 td {
     text-align: center;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 16px;
 }
 
 table th {
@@ -60,4 +62,20 @@ button {
     color: white;
     font-weight: bold;
     cursor: pointer;
+}
+
+.resultado {
+    padding: 8px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    border-radius: 3px;
+}
+
+.aprovado {
+    background-color: #009432;
+}
+
+.reprovado {
+    background-color: red;
 }
