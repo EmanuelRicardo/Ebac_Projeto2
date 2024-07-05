@@ -2,6 +2,8 @@ var linhas = '';
 var imagem_aprovado = '<img src="imagens/emoje_festa.png" alt="Emoji festivo">'
 var imagem_reprovado = '<img src="imagens/emoji_triste.png" alt="Emoje triste">'
 var valor_media = window.document.getElementById ('media')
+var contador_media = 0
+
 
 function botao_add(e){
     e.preventDefault();
@@ -19,8 +21,12 @@ function botao_add(e){
         linha += '</tr>';
         // Isso aqui ta criando uma linha inteira com todas as informações
         linhas += linha;
-        var quantidade_notas = linhas.length
         // Isso faz com que a gennte jogue cada vez mais "Linha", pois eu salvo o que ja tem no "Linhas" e acrescento cada vez mais "linha"
+        if (nome_atividade.value.length != 0){
+            contador_media += 1
+            window.alert (`contador: ${contador_media}`)
+        } 
+        // Isso aqui vai contar quantas vezes foi lançado um numero no "nota_atividade"
         var corpo_tabela = window.document.querySelector('tbody');
         corpo_tabela.innerHTML = linhas;
 
