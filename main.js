@@ -6,6 +6,7 @@ var contador_media = 0
 var valor_total_notas = 0
 var media = 0
 var passou_ou_nao = window.document.getElementById ('passou_ou_nao')
+var nota_minima = Number (prompt('Digite a nota minima: '))
 
 
 function botao_add(e){
@@ -20,7 +21,7 @@ function botao_add(e){
         var linha = '<tr>';
         linha += `<td>${nome_atividade.value}</td>`
         linha += `<td>${nota_atividade.value}</td>`
-        linha += `<td>${nota_atividade.value >= 6? imagem_aprovado : imagem_reprovado}`
+        linha += `<td>${nota_atividade.value >= nota_minima? imagem_aprovado : imagem_reprovado}`
         linha += '</tr>';
         // Isso aqui ta criando uma linha inteira com todas as informações
         linhas += linha;
@@ -40,7 +41,7 @@ function botao_add(e){
         corpo_tabela.innerHTML = linhas;
 
 
-        if (media >= 6){
+        if (media >= nota_minima){
             passou_ou_nao.innerHTML = 'Aprovado'
             passou_ou_nao.style.backgroundColor = 'green'
         } else {
